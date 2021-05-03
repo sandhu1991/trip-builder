@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <title>{{config('swagger-lume.api.title')}}</title>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Source+Code+Pro:300,600|Titillium+Web:400,600,700" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="{{ swagger_lume_asset('swagger-ui.css') }}" >
-    <link rel="icon" type="image/png" href="{{ swagger_lume_asset('favicon-32x32.png') }}" sizes="32x32" />
-    <link rel="icon" type="image/png" href="{{ swagger_lume_asset('favicon-16x16.png') }}" sizes="16x16" />
+    <link rel="stylesheet" type="text/css" href="https://trip-adviser-hub.herokuapp.com/swagger-ui-assets/swagger-ui.css" >
+    <link rel="icon" type="image/png" href="https://trip-adviser-hub.herokuapp.com/swagger-ui-assets/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="https://trip-adviser-hub.herokuapp.com/swagger-ui-assets/favicon-16x16.png" sizes="16xcd16" />
     <style>
         html
         {
@@ -67,15 +67,15 @@
 
 <div id="swagger-ui"></div>
 
-<script src="{{ swagger_lume_asset('swagger-ui-bundle.js') }}"> </script>
-<script src="{{ swagger_lume_asset('swagger-ui-standalone-preset.js') }}"> </script>
+<script src="https://trip-adviser-hub.herokuapp.com/swagger-ui-assets/swagger-ui-bundle.js"> </script>
+<script src="https://trip-adviser-hub.herokuapp.com/swagger-ui-assets/swagger-ui-standalone-preset.js"> </script>
 <script>
     window.onload = function() {
         // Build a system
         const ui = SwaggerUIBundle({
             dom_id: '#swagger-ui',
 
-            url: "{!! $urlToDocs !!}",
+            url: "https://trip-adviser-hub.herokuapp.com/docs",
             operationsSorter: {!! isset($operationsSorter) ? '"' . $operationsSorter . '"' : 'null' !!},
             configUrl: {!! isset($additionalConfigUrl) ? '"' . $additionalConfigUrl . '"' : 'null' !!},
             validatorUrl: {!! isset($validatorUrl) ? '"' . $validatorUrl . '"' : 'null' !!},
