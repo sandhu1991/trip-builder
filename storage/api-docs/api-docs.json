@@ -1,0 +1,125 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Trip API",
+        "contact": {
+            "name": "Support Team",
+            "email": "sandhu.hardilpreet@gmail.com"
+        },
+        "version": "3.0"
+    },
+    "paths": {
+        "/api/trips": {
+            "get": {
+                "summary": "Get All Trips",
+                "operationId": "App\\Http\\Controllers\\FlightController::getTrips",
+                "parameters": [
+                    {
+                        "name": "from",
+                        "in": "query",
+                        "description": "Depature Airport Code",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "departDate",
+                        "in": "query",
+                        "description": "Depature Date",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "to",
+                        "in": "query",
+                        "description": "Arrival Airport Code",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "returnDate",
+                        "in": "query",
+                        "description": "Return Date",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "oneway",
+                        "in": "query",
+                        "description": "Flight Type",
+                        "schema": {
+                            "type": "string",
+                            "default": false
+                        }
+                    },
+                    {
+                        "name": "airline",
+                        "in": "query",
+                        "description": "Airline Code",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "stops",
+                        "in": "query",
+                        "description": "Number of stops",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Validation Response"
+                    }
+                }
+            }
+        },
+        "/api/countires": {
+            "get": {
+                "summary": "Get All Countries",
+                "operationId": "App\\Http\\Controllers\\FlightController::getCountires",
+                "parameters": [
+                    {
+                        "name": "code",
+                        "in": "query",
+                        "description": "Country Code",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Validation Response"
+                    }
+                }
+            }
+        },
+        "/api/airports": {
+            "get": {
+                "summary": "Get All Airports",
+                "operationId": "App\\Http\\Controllers\\FlightController::getAirports",
+                "parameters": [
+                    {
+                        "name": "code",
+                        "in": "query",
+                        "description": "Airport Code",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Validation Response"
+                    }
+                }
+            }
+        }
+    }
+}
