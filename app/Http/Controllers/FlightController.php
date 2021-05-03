@@ -54,7 +54,7 @@ class FlightController extends Controller
         *    @OA\Schema(type="integer")
         *  ),
         *  @OA\Response(response="200",
-        *    description="Validation Response",
+        *    description="Succesfully Found",
         *  )
         * )
     */

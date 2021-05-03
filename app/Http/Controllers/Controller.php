@@ -8,7 +8,7 @@ class Controller extends BaseController
 {
     /**
      * @OA\Info(
-     *   title="Trip API",
+     *   title="Trip Builder API",
      *   version="3.0",
      *   @OA\Contact(
      *     email="sandhu.hardilpreet@gmail.com",
