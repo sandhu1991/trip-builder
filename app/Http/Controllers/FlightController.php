@@ -40,17 +40,17 @@ class FlightController extends Controller
         *  ),
         *  @OA\Parameter(name="oneway",
         *    in="query",
-        *    description="Flight Type",
+        *    description="One Way Trip",
         *    @OA\Schema(type="string", default=false)
         *  ),
         *  @OA\Parameter(name="airline",
         *    in="query",
-        *    description="Airline Code",
+        *    description="Airline Code | Optional",
         *    @OA\Schema(type="string")
         *  ),
          *  @OA\Parameter(name="stops",
         *    in="query",
-        *    description="Number of stops",
+        *    description="Number of stops | Optional",
         *    @OA\Schema(type="integer")
         *  ),
         *  @OA\Response(response="200",
