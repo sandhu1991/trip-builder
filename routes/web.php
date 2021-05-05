@@ -19,6 +19,6 @@ $router->get('/', function () use ($router) {
 
 $router->group(['prefix' => 'api'], function () use ($router) {
     $router->get('/trips', ['uses' => 'FlightController@getTrips'] );
-    $router->get('/countires', ['uses' => 'FlightController@getCountires'] );
+    $router->get('/countires', ['uses' => 'FlightController@getAirlines'] );
     $router->get('/airports', ['uses' => 'FlightController@getAirports'] );
 });

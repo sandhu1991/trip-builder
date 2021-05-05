@@ -109,11 +109,11 @@ class FlightController extends Controller
    
     /**
         * @OA\Get(
-        * path="/api/countires",
-        *  summary="Get All Countries",
+        * path="/api/arlines",
+        *  summary="Get All Arlines",
         *  @OA\Parameter(name="code",
         *    in="query",
-        *    description="Country Code",
+        *    description="Airline Code",
         *    @OA\Schema(type="string")
         *  ),
         *  @OA\Response(response="200",
@@ -121,7 +121,7 @@ class FlightController extends Controller
         *  )
         * )
     */
-    public function getCountires(request $request)
+    public function getAirlines(request $request)
     {
         //add validation rules
         $validator = Validator::make($request->all(), [
@@ -325,6 +325,13 @@ class FlightController extends Controller
         }
         
         foreach ($landingFlights as $key => $value) {
+
+            $lastFlight = end($this->connections);
+            if(strtoupper($value->departure_airport) == strtoupper($lastFlight->arrival_airport)){
+                
+                $this->connections= []; 
+                return;
+            }
 
             if(strtoupper($value->departure_airport) == strtoupper($from)){
 
