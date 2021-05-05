@@ -49,7 +49,7 @@
                     {
                         "name": "oneway",
                         "in": "query",
-                        "description": "Flight Type",
+                        "description": "One Way Trip",
                         "schema": {
                             "type": "string",
                             "default": false
@@ -58,7 +58,7 @@
                     {
                         "name": "airline",
                         "in": "query",
-                        "description": "Airline Code",
+                        "description": "Airline Code | Optional",
                         "schema": {
                             "type": "string"
                         }
@@ -66,7 +66,7 @@
                     {
                         "name": "stops",
                         "in": "query",
-                        "description": "Number of stops",
+                        "description": "Number of stops | Optional",
                         "schema": {
                             "type": "integer"
                         }
