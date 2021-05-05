@@ -11,7 +11,7 @@
     "paths": {
         "/api/trips": {
             "get": {
-                "summary": "Get All Trips",
+                "summary": "Get Trips",
                 "operationId": "App\\Http\\Controllers\\FlightController::getTrips",
                 "parameters": [
                     {
@@ -79,15 +79,15 @@
                 }
             }
         },
-        "/api/countires": {
+        "/api/airlines": {
             "get": {
-                "summary": "Get All Countries",
-                "operationId": "App\\Http\\Controllers\\FlightController::getCountires",
+                "summary": "Get Airlines",
+                "operationId": "App\\Http\\Controllers\\FlightController::getAirlines",
                 "parameters": [
                     {
                         "name": "code",
                         "in": "query",
-                        "description": "Country Code",
+                        "description": "Airline Code | Optional",
                         "schema": {
                             "type": "string"
                         }
@@ -102,13 +102,13 @@
         },
         "/api/airports": {
             "get": {
-                "summary": "Get All Airports",
+                "summary": "Get Airports",
                 "operationId": "App\\Http\\Controllers\\FlightController::getAirports",
                 "parameters": [
                     {
                         "name": "code",
                         "in": "query",
-                        "description": "Airport Code",
+                        "description": "Airport Code | Optional",
                         "schema": {
                             "type": "string"
                         }

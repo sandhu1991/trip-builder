@@ -17,7 +17,7 @@ class FlightController extends Controller
     /**
         * @OA\Get(
         * path="/api/trips",
-        *  summary="Get All Trips",
+        *  summary="Get Trips",
         *  @OA\Parameter(name="from",
         *    in="query",
         *    description="Depature Airport Code",
@@ -109,11 +109,11 @@ class FlightController extends Controller
    
     /**
         * @OA\Get(
-        * path="/api/arlines",
-        *  summary="Get All Arlines",
+        * path="/api/airlines",
+        *  summary="Get Airlines",
         *  @OA\Parameter(name="code",
         *    in="query",
-        *    description="Airline Code",
+        *    description="Airline Code | Optional",
         *    @OA\Schema(type="string")
         *  ),
         *  @OA\Response(response="200",
@@ -123,14 +123,6 @@ class FlightController extends Controller
     */
     public function getAirlines(request $request)
     {
-        //add validation rules
-        $validator = Validator::make($request->all(), [
-            'code'=>'required|string',
-        ]);
-        if($validator->fails()){
-            return response()->json($validator->errors());
-        }
-
         $data = $request->all();
         $code = isset($data['code']) ?  $data['code'] : false;
 
@@ -149,10 +141,10 @@ class FlightController extends Controller
     /**
         * @OA\Get(
         * path="/api/airports",
-        *  summary="Get All Airports",
+        *  summary="Get Airports",
         *  @OA\Parameter(name="code",
         *    in="query",
-        *    description="Airport Code",
+        *    description="Airport Code | Optional",
         *    @OA\Schema(type="string")
         *  ),
         *  @OA\Response(response="200",
@@ -162,14 +154,6 @@ class FlightController extends Controller
     */
     public function getAirports(request $request)
     {
-        //add validation rules
-        $validator = Validator::make($request->all(), [
-            'code'=>'required|string',
-        ]);
-        if($validator->fails()){
-            return response()->json($validator->errors());
-        }
-
         $data = $request->all();
         $code = isset($data['code']) ?  $data['code'] : false;
 
